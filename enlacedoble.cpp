@@ -22,12 +22,11 @@ void insertar(){
 		nuevo->antes=ultimo;
 		ultimo=nuevo;
 	}
-	}
+}
 void mostrarlis(){
 	nodo* actual=new nodo();
 	actual=primero;
 	if(primero!=NULL){
-		
 		while(actual!=NULL){
 			cout<<"\n" <<actual->valor;
 			actual=actual->siguiente;
@@ -36,13 +35,30 @@ void mostrarlis(){
 		cout<<"La lista no contiene nada"<<endl;
 	}	
 }
-int main(){
+void mostrarlisr(){
+	nodo* actual=new nodo();
+	actual=ultimo;
+	if(primero!=NULL){
+		while(actual!=NULL){
+			cout<<"\n" <<actual->valor;
+			actual=actual->antes;
+		}
+	}else{
+		cout<<"La lista no contiene nada"<<endl;
+	}	
+}	
 	
+int main(){
 	insertar();
 	insertar();
 	insertar();
-	cout<<"Los datos Ingresados Son: "<<endl;
+	insertar();
+	insertar();
+	cout<<"Mostrar datos del Primero al Ultimo: "<<endl;
 	mostrarlis();
+	cout<<"\n Mostrar datos del Ultimo al Primero: "<<endl;
+	mostrarlisr();
+	
 	
 	return 0;	
 }
